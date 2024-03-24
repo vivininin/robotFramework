@@ -1,0 +1,24 @@
+﻿@model List<Mooshak2.Models.Entities.Course>
+@{
+    ViewBag.Title = "User";
+}
+
+<h2>Students</h2>
+
+<<div class="row">
+    <div class="col-md-12">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <h2>@item.Title</h2>
+                <p>@item.Details</p>
+                <p>@Html.ActionLink("Go to course", "ID","Course", new { id = item.CourseID }, new { @class = "btn btn-default" })</p>
+            </div>
+        }
+
+    </div>
+
+
+
+</div>
+
