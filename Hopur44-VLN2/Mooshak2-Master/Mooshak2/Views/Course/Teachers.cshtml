@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Mooshak2.Models.ViewModels.TeacherViewModel>
+@{
+    ViewBag.Title = "Teachers";
+}
+
+<h2>Teachers</h2>
+<ol class="breadcrumb">
+    <li><a href="~/Home">Home</a></li>
+    <li class="active">Teachers</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-group">
+            @foreach (var item in Model)
+            {
+                <li class="list-group-item">@item.Name.UserName</li>
+            }
+        </ul>
+    </div>
+</div>
