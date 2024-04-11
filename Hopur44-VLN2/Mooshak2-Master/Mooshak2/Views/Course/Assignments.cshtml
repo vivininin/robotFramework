@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Mooshak2.Models.ViewModels.AssignmentViewModel>
+@{
+    ViewBag.Title = "Assignments";
+}
+
+<h2>Assignments</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/Home">Home</a></li>
+    <li class="active">Assignments</li>
+</ol>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <ul class="list-group">
+            @foreach (var item in Model)
+            {
+                <li class="list-group-item">@Html.ActionLink(@item.Title.Title, "../Assignments/Index", new { @class = "btn btn-default" })</li>
+            }
+
+            @if (User.IsInRole("Teacher") == true)
+            {
+                <li class="list-group-item"><a href="">Add project</a></li>
+            }
+
+
+            @if (User.IsInRole("Student") == true)
+            {
+                <li class="list-group-item">@Html.ActionLink("Submit solution", "../Assignments/Solution", new { @class = "btn btn-default" })</li>
+            }
+</ul>
+</div>
+</div>
